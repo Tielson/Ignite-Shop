@@ -1,6 +1,6 @@
 # Ignite Shop
 
-  <p align="center"><img src="blob:https://imgur.com/1f516787-b390-4c85-8754-07b3765d620c"></p>
+  <p align="center"><img src="https://i.imgur.com/Y46ObVS.png"></p>
 
 
 ## Project description
