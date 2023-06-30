@@ -15,8 +15,8 @@ export default async function handler(
     return res.status(400).json({ error: 'Price not found.' })
   }
 
-  const sucessUrl = `${process.env.NEXT_URL}/success?session_id={CHECKOUT_SESSION_ID}`
-  const cancelUrl = `${process.env.NEXT_URL}`
+  const sucessUrl = `https://ignite-shop-fawn-five.vercel.app/success?session_id={CHECKOUT_SESSION_ID}`
+  const cancelUrl = `https://ignite-shop-fawn-five.vercel.app`
 
   const checkoutSession = await stripe.checkout.sessions.create({
     success_url: sucessUrl,
