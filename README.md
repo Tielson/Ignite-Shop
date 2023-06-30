@@ -10,9 +10,9 @@
 
 ### Features
 
-- [x] Cadastros de produtos pelo Stripe.
-- [x] Carrocel dos produtos com API do Stripe.
-- [x] Selecionar a camisa e fechar a compra pelo Stripe e retornar para pagina de sucesso.
+- [x] Product registrations through Stripe.
+- [x] Carousel of Stripe API products.
+- [x] Select the shirt and close the purchase through Stripe and return to the success page.
 
 
 ### How to use
