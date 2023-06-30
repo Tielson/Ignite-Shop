@@ -52,6 +52,7 @@ export default function Product({ product }: ProductProps) {
       window.location.href = checkoutUrl
     } catch (error) {
       setIsCreatingCheckoutSession(false)
+      console.log(error)
       alert('Falha ao redirecionar ao checkout ')
     }
   }
