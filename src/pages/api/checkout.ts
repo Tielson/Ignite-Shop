@@ -16,8 +16,8 @@ export default async function handler(
     return res.status(400).json({ error: 'Price not found.' })
   }
 
-  const sucessUrl = `https://ignite-shop-fawn-five.vercel.app/success?session_id={CHECKOUT_SESSION_ID}`
-  const cancelUrl = `https://ignite-shop-fawn-five.vercel.app`
+  const sucessUrl = `http://localhost:3000/success?session_id={CHECKOUT_SESSION_ID}`
+  const cancelUrl = `http://localhost:3000`
 
   const lineItems = priceIds.map((priceId: ProductProps) => ({
     price: priceId.id,

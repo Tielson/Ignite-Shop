@@ -28,6 +28,7 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { useContext, useState } from 'react'
 import { IoMdClose } from 'react-icons/io'
+import axios from 'axios'
 
 interface StripProps {
   products: {
@@ -48,6 +49,8 @@ export default function Home({ products }: StripProps) {
   const [cartModal, setCartModal] = useState('hide')
   const { isFallback } = useRouter()
   const { cartItem, valueTotal, removeFromCart } = useContext(CartContext)
+  const [isCreatingCheckoutSession, setIsCreatingCheckoutSession] =
+    useState(false)
 
   function hindleCartModal() {
     console.log(cartItem, valueTotal)
@@ -55,6 +58,23 @@ export default function Home({ products }: StripProps) {
       return setCartModal('')
     }
     setCartModal('hide')
+  }
+
+  async function handleBuyProduct() {
+    try {
+      setIsCreatingCheckoutSession(true)
+      const response = await axios.post('/api/checkout', {
+        priceIds: cartItem,
+      })
+
+      const { checkoutUrl } = response.data
+
+      window.location.href = checkoutUrl
+    } catch (error) {
+      setIsCreatingCheckoutSession(false)
+      console.log(error)
+      alert('Falha ao redirecionar ao checkout ')
+    }
   }
   return (
     <>
@@ -111,7 +131,12 @@ export default function Home({ products }: StripProps) {
             </h1>
           </div>
         </ValueQuantity>
-        <CheckoutButton>Finalizar compra</CheckoutButton>
+        <CheckoutButton
+          disabled={isCreatingCheckoutSession}
+          onClick={handleBuyProduct}
+        >
+          Finalizar compra
+        </CheckoutButton>
       </CartItems>
 
       <HomeContainer ref={sliderRef} className="keen-slider">
