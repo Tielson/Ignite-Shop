@@ -101,3 +101,21 @@ export const LoadingSpinner = styled('div', {
   borderRadius: '50%',
   animation: `${spinner} 1.5s linear infinite`,
 })
+
+export const IconGreen = styled('div', {
+  width: '3.5rem',
+  height: '3.5rem',
+  background: '$green500',
+
+  display: 'flex',
+  padding: '0.75rem',
+  alignItems: 'center',
+  justifyContent: 'center',
+  borderRadius: '0.375rem',
+
+  svg: {
+    width: '2rem',
+    height: '2rem',
+    color: '$white',
+  },
+})

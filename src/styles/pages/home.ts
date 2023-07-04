@@ -61,9 +61,31 @@ export const Product = styled('div', {
   },
 
   '&:hover': {
+    background: ' linear-gradient(180deg,#7465D4 0%,   #1EA483 100%)',
     footer: {
       transform: 'translateY(0%)',
       opacity: 1,
+    },
+  },
+
+  div: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+
+  '.handbag': {
+    width: '3.5rem',
+    height: '3.5rem',
+    background: '$green300',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 6,
+
+    svg: {
+      width: '2rem',
+      height: '2rem',
+      color: 'white',
     },
   },
 })
